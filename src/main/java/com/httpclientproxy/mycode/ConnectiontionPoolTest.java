@@ -154,7 +154,7 @@ public class ConnectiontionPoolTest {
 
                 try {
                     HttpEntity entity = response.getEntity();
-                    //System.out.println(response.getStatusLine());
+                    System.out.println(response.getStatusLine());
 
                     if(entity!=null){
                         System.out.println("test");

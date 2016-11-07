@@ -3,15 +3,15 @@ package com.httpclientproxy.mycode;
 /**
  * Created by Tianjinjin on 2016/11/2.
  */
-public class IpAddress {
+public class ProxyIp {
     String ip;
     int port;
 
-    IpAddress(){
+    ProxyIp(){
 
     }
 
-    IpAddress(String ip, int port){
+    ProxyIp(String ip, int port){
         this.ip=ip;
         this.port=port;
     }

@@ -1,19 +1,11 @@
 package com.httpclientproxy.mycode;
 
 
-import org.apache.http.HttpEntityEnclosingRequest;
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.NoHttpResponseException;
-import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
-import org.apache.http.conn.ConnectTimeoutException;
-import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.LayeredConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
@@ -21,14 +13,7 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.apache.http.pool.PoolStats;
-import org.apache.http.protocol.HttpContext;
 
-import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLHandshakeException;
-import java.io.IOException;
-import java.io.InterruptedIOException;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -99,27 +84,27 @@ public class HttpConnectionPool {
                 "http://blog.csdn.net/gaolu/article/details/38439375",
         };
 
-        List<IpAddress> list = new ArrayList();
-        list.add(new IpAddress("123.234.143.121",81));
-        list.add(new IpAddress("122.72.32.73",80));
-        list.add(new IpAddress("122.96.59.107", 843));
-        list.add(new IpAddress("122.96.59.98", 80));
-        list.add(new IpAddress("218.25.13.23", 80));
-        list.add(new IpAddress("119.53.131.6", 8118));
-        list.add(new IpAddress("122.96.59.99", 80));
-        list.add(new IpAddress("112.195.69.157", 8118));
-        list.add(new IpAddress("202.171.253.72", 80));
-        list.add(new IpAddress("175.42.45.167", 8888));
-        list.add(new IpAddress("218.106.205.145", 8080));
-        list.add(new IpAddress("175.17.225.86", 8888));
-        list.add(new IpAddress("183.129.178.14", 8080));
-        list.add(new IpAddress("122.228.179.178", 80));
-        list.add(new IpAddress("117.28.255.84", 80));
-        list.add(new IpAddress("120.76.243.40", 80));
-        list.add(new IpAddress("122.5.233.250", 8888));
-        list.add(new IpAddress("124.88.67.20", 80));
-        list.add(new IpAddress("106.75.176.4", 80));
-        list.add(new IpAddress("123.56.74.13", 8080));
+        List<ProxyIp> list = new ArrayList();
+        list.add(new ProxyIp("123.234.143.121",81));
+        list.add(new ProxyIp("122.72.32.73",80));
+        list.add(new ProxyIp("122.96.59.107", 843));
+        list.add(new ProxyIp("122.96.59.98", 80));
+        list.add(new ProxyIp("218.25.13.23", 80));
+        list.add(new ProxyIp("119.53.131.6", 8118));
+        list.add(new ProxyIp("122.96.59.99", 80));
+        list.add(new ProxyIp("112.195.69.157", 8118));
+        list.add(new ProxyIp("202.171.253.72", 80));
+        list.add(new ProxyIp("175.42.45.167", 8888));
+        list.add(new ProxyIp("218.106.205.145", 8080));
+        list.add(new ProxyIp("175.17.225.86", 8888));
+        list.add(new ProxyIp("183.129.178.14", 8080));
+        list.add(new ProxyIp("122.228.179.178", 80));
+        list.add(new ProxyIp("117.28.255.84", 80));
+        list.add(new ProxyIp("120.76.243.40", 80));
+        list.add(new ProxyIp("122.5.233.250", 8888));
+        list.add(new ProxyIp("124.88.67.20", 80));
+        list.add(new ProxyIp("106.75.176.4", 80));
+        list.add(new ProxyIp("123.56.74.13", 8080));
 
         long  start  =  System.currentTimeMillis();
 
